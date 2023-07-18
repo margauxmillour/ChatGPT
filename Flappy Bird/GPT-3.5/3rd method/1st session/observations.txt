@@ -1,0 +1,5 @@
+requests: 19
+interventions in the code: 2
+
+- I had to tell ChatGPT to add a clock, it wouldn't find where the problem was by itself.
+- manage the gap placement between the pipes

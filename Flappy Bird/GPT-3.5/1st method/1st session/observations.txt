@@ -1,0 +1,4 @@
+requests: 2
+
+The first code couldn't compile because some functions needed the font, and it wasn't a global variable. ChatGPT solved it by passing the font as an argument. (it only solved it for 1 function, I did it for the others since it understood what needed to be done).
+The texts are not very well arranged; some are on top of each other, others exceed the size of the window, but this can easily be adjusted.

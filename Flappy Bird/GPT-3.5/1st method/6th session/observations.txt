@@ -1,0 +1,7 @@
+requests: 6
+
+
+I only made small modifications to the code, to make the game more playable:
+- rect of the bird: adjust it to its real size
+- gap between pipes and their speed
+- scoring system: little adjustments

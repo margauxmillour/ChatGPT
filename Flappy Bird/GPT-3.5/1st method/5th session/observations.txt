@@ -1,0 +1,3 @@
+request: 1
+
+I added bird_group.empty() and pipe_group.empty() in the start_game() function

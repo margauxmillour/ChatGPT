@@ -1,0 +1,3 @@
+requests: 4
+
+I had to change some values to match the size of the images. I also changed the way the base appeared.

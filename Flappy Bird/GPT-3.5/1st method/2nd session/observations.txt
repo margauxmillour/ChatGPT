@@ -1,0 +1,5 @@
+request: 1
+
+quite a few problems in the way the code is written, comes from the prompt.
+
+I added birds.empty() in the start_game() function, so that there is only one bird.

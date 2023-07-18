@@ -1,0 +1,3 @@
+requests: 10
+
+Some variables were declared outside the functions in which they were needed.

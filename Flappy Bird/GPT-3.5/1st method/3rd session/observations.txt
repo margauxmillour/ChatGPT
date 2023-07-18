@@ -1,0 +1,3 @@
+request: 1
+
+I added a variable is_passed to check if the score had only been incremented or not for each pipe.

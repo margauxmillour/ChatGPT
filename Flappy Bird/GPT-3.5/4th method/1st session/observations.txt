@@ -1,0 +1,7 @@
+requests: 5
+interventions: 1
+
+- Impossible to quit start screen
+
+No Bird and Pipe class, would take too long to make ChatGPT understand that without looking at the code.
+

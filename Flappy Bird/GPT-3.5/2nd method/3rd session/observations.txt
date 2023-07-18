@@ -1,0 +1,6 @@
+requests: 11
+
+There was a 'FLAP' event that made the bird jump every 200ms. That's not part of the game!
+I changed the values of the gravity, bird_movemement and pipe_gap to make it easier and more controllable.
+
+I changed the time between each pipe spawn. Otherwise, there would have been moments were the list was empty --> broke the game.

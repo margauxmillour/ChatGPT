@@ -1,0 +1,4 @@
+request: 1
+
+The first version worked, but was quite far from the actual game.
+The second version doesn't work at all.

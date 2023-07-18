@@ -1,0 +1,38 @@
+code_0:
+highscore.png
+font defined in one function and not in the others or globally
+no Pipe class
+
+
+code_1:
+no Pipe class
+
+
+code_2:
+highscore in assets folder
+
+
+code_3:
+images in a separate file
+
+
+code_4:
+images in a separate file
+impossible to quit game over screen
+
+
+code_6:
+if pipes[0]['top'].x + PIPE_WIDTH < 0:
+IndexError: list index out of range
+
+
+code_7:
+SyntaxError: closing parenthesis ')' does not match opening parenthesis '['
+
+
+code_8:
+needed a game over image
+
+
+code_10:
+AttributeError: 'Pipe' object has no attribute 'add_internal'

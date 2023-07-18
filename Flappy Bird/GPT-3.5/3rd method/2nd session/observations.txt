@@ -1,0 +1,3 @@
+requests: 7
+
+The game closes when the bird arrives on top of a pipe. ChatGPT wasn't able to solve the problem.

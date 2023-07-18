@@ -1,0 +1,4 @@
+requests: 6
+
+gap_y = random.randint(WINDOW_HEIGHT - pipe_gap, pipe_gap + pipe_height)
+I inverted the two arguments (corrected version above), the first one was greater than the second one.
