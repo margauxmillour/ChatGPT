@@ -1,0 +1,27 @@
+@startuml
+class Bird {
+  __init__()
+  update()
+  jump()
+  check_boundaries()
+}
+class Pipe {
+  __init__()
+  update()
+  is_offscreen()
+}
+class Cloud {
+  __init__()
+  update()
+  is_offscreen()
+}
+class Base {
+  __init__()
+  update()
+}
+class Game {
+  __init__()
+  new_pipe()
+  run()
+}
+@enduml
