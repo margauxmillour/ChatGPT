@@ -1,14 +1,15 @@
 @startuml
 class Bird {
   __init__()
-  update()
   jump()
-  check_boundaries()
+  update()
+  draw()
 }
 class Pipe {
   __init__()
   update()
-  is_offscreen()
+  draw()
+  collide()
 }
 class Cloud {
   __init__()
@@ -18,10 +19,26 @@ class Cloud {
 class Base {
   __init__()
   update()
+  draw()
 }
 class Game {
   __init__()
-  new_pipe()
+  start_screen()
+  game_over_screen()
+  start()
+  game_over()
+  load_highscore()
+  save_highscore()
+  start()
+  handle_input()
+  update()
+  game_over()
+  draw()
+}
+class FlappyBird {
+  __init__()
+  updateWalls()
+  birdUpdate()
   run()
 }
 @enduml

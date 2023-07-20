@@ -120,7 +120,39 @@ No Bird and Pipe class, would take too long to make ChatGPT understand that with
 
 
 
-==== GPT-3.5/left_to_right ====
+==== GPT-3.5/left_to_right/1st session ====
 
 requests: 5
+
+==== GPT-4/3rd method/2nd session ====
+
+requests: 6
+
+Forgot to import random, but corrected itself without having to ask.
+
+==== GPT-4/3rd method/1st session ====
+
+requests: 9
+
+==== GPT-4/1st method/3rd session-GPT3.5 ====
+
+requests: 12
+
+==== GPT-4/1st method/1st session-GPT3.5 ====
+
+requests: 4
+
+==== GPT-4/1st method/5th session-GPT4 ====
+
+requests: 10
+
+Some variables were declared outside the functions in which they were needed.
+
+==== GPT-4/1st method/4th session-GPT4 ====
+
+requests: 8
+
+==== GPT-4/1st method/2nd session-GPT3.5 ====
+
+request: 1
 
