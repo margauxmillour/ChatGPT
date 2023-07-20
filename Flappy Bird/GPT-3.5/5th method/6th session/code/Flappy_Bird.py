@@ -26,7 +26,7 @@ bird_y = window_height // 2 - bird_images[0].get_height() // 2
 
 # Set gravity and jump height
 gravity = 0.5
-jump_height = 8
+jump_height = 6
 
 # Set initial bird speed
 bird_speed = 0
