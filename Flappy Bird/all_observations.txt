@@ -1,0 +1,158 @@
+==== GPT-3.5/3rd method/2nd session ====
+
+requests: 7
+
+The game closes when the bird arrives on top of a pipe. ChatGPT wasn't able to solve the problem.
+
+==== GPT-3.5/3rd method/1st session ====
+
+requests: 19
+interventions in the code: 2
+
+- I had to tell ChatGPT to add a clock, it wouldn't find where the problem was by itself.
+- manage the gap placement between the pipes
+
+==== GPT-3.5/3rd method/3rd session ====
+
+requests: 5
+
+I changed a bit how the collision detection.
+
+==== GPT-3.5/2nd method/2nd session ====
+
+requests: 7
+
+Pipes only came 1 by 1 and not by pair. Trying to implement that only led to more problems that ChatGPT couldn't solve.
+
+
+==== GPT-3.5/2nd method/1st session ====
+
+requests: 8
+
+ChatGPT doesn't seem to find how to fix the code by itself (when we just point out the problems).
+
+==== GPT-3.5/2nd method/4th session ====
+
+requests: 10
+
+Too many problems (no top pipes, always at the same height, wrong collision detection...)
+
+==== GPT-3.5/2nd method/3rd session ====
+
+requests: 11
+
+There was a 'FLAP' event that made the bird jump every 200ms. That's not part of the game!
+I changed the values of the gravity, bird_movemement and pipe_gap to make it easier and more controllable.
+
+I changed the time between each pipe spawn. Otherwise, there would have been moments were the list was empty --> broke the game.
+
+==== GPT-3.5/1st method/2nd session ====
+
+request: 1
+
+quite a few problems in the way the code is written, comes from the prompt.
+
+I added birds.empty() in the start_game() function, so that there is only one bird.
+
+==== GPT-3.5/1st method/8th session ====
+
+requests: 4
+
+I had to change some values to match the size of the images. I also changed the way the base appeared.
+
+==== GPT-3.5/1st method/5th session ====
+
+request: 1
+
+I added bird_group.empty() and pipe_group.empty() in the start_game() function
+
+==== GPT-3.5/1st method/1st session ====
+
+requests: 2
+
+The first code couldn't compile because some functions needed the font, and it wasn't a global variable. ChatGPT solved it by passing the font as an argument. (it only solved it for 1 function, I did it for the others since it understood what needed to be done).
+The texts are not very well arranged; some are on top of each other, others exceed the size of the window, but this can easily be adjusted.
+
+==== GPT-3.5/1st method/7th session ====
+
+requests: 6
+
+gap_y = random.randint(WINDOW_HEIGHT - pipe_gap, pipe_gap + pipe_height)
+I inverted the two arguments (corrected version above), the first one was greater than the second one.
+
+==== GPT-3.5/1st method/6th session ====
+
+requests: 6
+
+
+I only made small modifications to the code, to make the game more playable:
+- rect of the bird: adjust it to its real size
+- gap between pipes and their speed
+- scoring system: little adjustments
+
+
+==== GPT-3.5/1st method/4th session ====
+
+request: 1
+
+The first version worked, but was quite far from the actual game.
+The second version doesn't work at all.
+
+
+==== GPT-3.5/1st method/3rd session ====
+
+request: 1
+
+I added a variable is_passed to check if the score had only been incremented or not for each pipe.
+
+==== GPT-3.5/4th method/2nd session ====
+
+request: 1
+
+==== GPT-3.5/4th method/1st session ====
+
+requests: 5
+interventions: 1
+
+- Impossible to quit start screen
+
+No Bird and Pipe class, would take too long to make ChatGPT understand that without looking at the code.
+
+
+
+==== GPT-3.5/left_to_right/1st session ====
+
+requests: 5
+
+==== GPT-4/3rd method/2nd session ====
+
+requests: 6
+
+Forgot to import random, but corrected itself without having to ask.
+
+==== GPT-4/3rd method/1st session ====
+
+requests: 9
+
+==== GPT-4/1st method/3rd session-GPT3.5 ====
+
+requests: 12
+
+==== GPT-4/1st method/1st session-GPT3.5 ====
+
+requests: 4
+
+==== GPT-4/1st method/5th session-GPT4 ====
+
+requests: 10
+
+Some variables were declared outside the functions in which they were needed.
+
+==== GPT-4/1st method/4th session-GPT4 ====
+
+requests: 8
+
+==== GPT-4/1st method/2nd session-GPT3.5 ====
+
+request: 1
+
