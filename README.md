@@ -3,12 +3,12 @@
 Is it possible to program non-trivial applications and customize code without knowing much about programming? 
 Impressive [showcases](https://youtu.be/qbIk7-JPB2c?t=1865) of [ChatGPT](https://twitter.com/acherm/status/1636035908137893896) suggest a positive answer. 
 Some people have even claimed that [programmers will be replaced or disappear](https://cacm.acm.org/magazines/2023/1/267976-the-end-of-programming/fulltext). 
-So, can end-users create working and non-trivial applications, like games, just using instructions in natural language with ChatGPT?
+So, can end-users create working and non-trivial applications, like games, just using instructions in natural language with ChatGPT? 
+Enter the git! 
 So far, we have mainly considered the game Flappy bird, using Python.  
 We are sharing 35 sessions, with prompts, code, observations, and results (videos) with ChatGPT-3.5 and ChatGPT-4. 
 
 We plan to collect other experiences and consider other applications and games in near future, **please contribute and/or stay tuned!**
-
 
 ## Method, prompts, code, observations, and results 
 
