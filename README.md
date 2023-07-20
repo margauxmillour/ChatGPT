@@ -86,19 +86,15 @@ No, we did not find a method (or a magic prompt) that **systematically** works a
 Though we have been able to generate interesting and playable games without technical intervention, there are also several cases and sessions that lead to a dead-end situation, far from the ideal scenario usually promised. 
 
 First, it happens that we reach a dead "end-state" with a non-working or unusable game (mainly due to inability to fix an issue), see for instance:
- * 2nd method, 1st session
- * 3rd method, 2nd session
  * 2nd method, 2nd session (it is possible to continue, but just requiring skills to debug code "("Pipes only came 1 by 1 and not by pair. Trying to implement that only led to more problems that ChatGPT couldn't solve.")")
  * 2nd method, 4th session (10 interactions, Too many problems (no top pipes, always at the same height, wrong collision detection...))
 
 Second, despite the same original prompt (and the same "method"), we can have very different generated code. 
 This difference is in terms of: 
  * issues in the code, requiring more or less fixing and debugging effort
- * features supported: ChatGPT takes the liberty to implement (or not) some functionalities, and the resulting game might be very different... It forces again to interact with ChatGPT, specifically with regards to what has been generated. 
+ * features supported: ChatGPT takes the liberty to implement (or not) some functionalities, and the resulting game might be very different... It forces again to interact with ChatGPT, specifically with regards to what has been generated.
+
 The consequence is that several specific interactions are needed, some leading to the worst situation (no working game), far from the ideal scenario. 
-
-
-
 
 
 
@@ -124,7 +120,8 @@ Some examples of issues that needed to be fixed:
  * gap placement between the pipes
  * collision detection
  * breaking of older functionality 
- * missing a bit of diversity 
+ * missing a bit of diversity
+
 Both fixes are time-consuming. It is possible to help thanks to end-user, visual observations about the game. 
 Sometimes, there is the need to orient discussions and interactions towards code. 
 
