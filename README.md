@@ -120,7 +120,8 @@ Some examples of issues that needed to be fixed:
  * gap placement between the pipes
  * collision detection
  * breaking of older functionality 
- * missing a bit of diversity 
+ * missing a bit of diversity
+
 Both fixes are time-consuming. It is possible to help thanks to end-user, visual observations about the game. 
 Sometimes, there is the need to orient discussions and interactions towards code. 
 
