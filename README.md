@@ -119,8 +119,10 @@ There are several interesting directions to consider:
  * improve the usability and the integration of ChatGPT ouputs into development environment. The back and forth between the IDE and ChatGPT is time-consuming. Moreover, some (informal) instructions of ChatGPT can be automatically applied onto the code base, limiting the user effort or the technical expertise required. The hope is to have a better feedback-loop! 
 
 
+## Misc 
 
-## Methods
+
+### Methods
 
 In the `GPT-3.5` and `GPT-4` folders, we use different "methods", organized in subfolders (1st method, 2nd method, etc.). Here are the details:
 
@@ -181,10 +183,10 @@ For instance:
     >* Finally, can you keep track of the highscore in a separate txt file? It should also be displayed on the game over screen.*
 
 
-## Future 
+### Future 
 
 
-### 3D game HTML/JS
+#### 3D game HTML/JS
 
 Sparks of Artificial General Intelligence: Early experiments with GPT-4 https://arxiv.org/abs/2303.12712 
 Section 3.1.2
@@ -211,7 +213,7 @@ Demo here: https://youtu.be/qbIk7-JPB2c?t=1865
 
 
 
-### Pong HTML/JS
+#### Pong HTML/JS
 
 I wanted to see what ChatGPT would write if I gave the minimum information, and not touching a single line of code. Here is how it went : 
 
@@ -227,6 +229,6 @@ A score was showing up, but stayed at zero no matter what was happening. Additio
 ```The score doesn't go up, can you fix the problem ? I would like to add a second player too, that would play using 'W' and 'S’```
 The game was now functional.
 
-### Pong and Game of life
+#### Pong and Game of life
 
 https://twitter.com/acherm/status/1636035908137893896
