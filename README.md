@@ -8,7 +8,9 @@ Enter the git!
 So far, we have mainly considered the game Flappy bird, using Python.  
 We are sharing 35 sessions, with prompts, code, observations, and results (videos) with ChatGPT-3.5 and ChatGPT-4. 
 
-[![FlappyBirdsChatGPT](https://img.youtube.com/vi/nmx1pg_DHzw/0.jpg)](https://youtu.be/nmx1pg_DHzw))
+There is a presentation of the work (see [PDF](ChatGPT%20and%20End-user%20Programming.pdf)) or a [Youtube video](https://youtu.be/nmx1pg_DHzw)
+
+[![FlappyBirdsChatGPT](https://img.youtube.com/vi/nmx1pg_DHzw/0.jpg)](https://youtu.be/nmx1pg_DHzw)
 
 We plan to collect other experiences and consider other applications and games in near future, **please contribute and/or stay tuned!**
 
