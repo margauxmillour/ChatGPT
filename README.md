@@ -20,10 +20,108 @@ There are two folders `GPT-4` and `GPT-3.5`.
 In each folder, there are different methods and strategies that we have used. For each method, several sessions with ChatGPT have been made: the prompts and interactions are available as Markdown files in `prompt`. There is also the code in `code` -- usually resulting from the last interaction with ChatGPT. 
 There is also a `video.mp4` that shows the game in action! Finally, there is also `observations.txt` that reviews the session, reporting some lessons learned or some indicators (e.g., number of iterations.)
  
+The five methods are as follows (more details below):
+ * _A short prompt_.
+  The prompt is given as a simple sentence that provides the overall (general) goal of the task.
+  No specific information nor detailed functionalities are given. At lot have to be infered by the LLM at generation time.
+  For instance:
+      >Write a Flappy Bird game in Python.
+ * _Providing a list of characteristics (this time written by a human)_.
+The user will come with a list of functions and/or characteristics that describe the game. The list is given all at once to ChatGPT and is used as the prompt. 
+ * _A short description of the main features_.
+ This can be seen as a mix of previous methods as the prompt is written in natural written language and not as a list of functionalities or characteristics. Yet, the text gives more information than the prompt proposed in the second method.
+ For instance:
+    > Write the code for a Flappy Bird game in python. I have a folder "assets" with "background.png", "pipe.png" and "bird.png". I would like to know my score and keep track of my highcore in a separate file. I would like to have a start screen when I first open the game, where I can see my highscore, and a game over screen where I can see my score, highscore and play again. 
+ * _Giving ChatGPT an example of finished code doing what we want (in our case a complete Flappy Bird game written in Python), and asking it to return a prompt_.
+The prompt returned was never the same (probably because of the temperature parameter), but was usually in the form of a list of characteristics.
+ * _A list of prompts (without having to look at the code in between the requests)_.
+ This last method would mimic the behavior of an end-user that carefully thought about what they need. They do not really interact with the LLM and only give the instruction one after an other without caring for the provided output.
+ Only the final output is used and potentially asked to be improved, anything before that is only the user trying to build little by little what would be its codebase.
+
+
+## Observation and synthesis
+ 
+### Do claims generalize? (Use the prompt and you'll get a game)  
+
+No, we did not find a method (or a magic prompt) that **systematically** works and would generate a feature-rich game.
+Though we have been able to generate interesting and playable games without technical intervention, there are also several cases and sessions that lead to a dead-end situation, far from the ideal scenario usually promised. 
+
+First, it happens that we reach a dead "end-state" with a non-working or unusable game (mainly due to inability to fix an issue), see for instance:
+ * 2nd method, 2nd session (it is possible to continue, but just requiring skills to debug code "("Pipes only came 1 by 1 and not by pair. Trying to implement that only led to more problems that ChatGPT couldn't solve.")")
+ * 2nd method, 4th session (10 interactions, Too many problems (no top pipes, always at the same height, wrong collision detection...))
+
+Second, despite the same original prompt (and the same "method"), we can have very different generated code. 
+This difference is in terms of: 
+ * issues in the code, requiring more or less fixing and debugging effort
+ * features supported: ChatGPT takes the liberty to implement (or not) some functionalities, and the resulting game might be very different... It forces again to interact with ChatGPT, specifically with regards to what has been generated.
+
+The consequence is that several specific interactions are needed, some leading to the worst situation (no working game), far from the ideal scenario. 
 
 
 
-Five methods:
+### Is it possible to program without expertise? 
+
+Yes, but again, it is not systematic.
+
+Direct interventions in the code are sometimes needed (to fix issues!). 
+For example, we had to `[...] change the values of the gravity, bird_movemement and pipe_gap to make it easier and more controllable.`
+ChatGPT does not seem to find how to fix the code by itself (when we just point out the problems).
+Besides, it is more challenging to interact as end-user when the game was from the start in a very bad shape, and basically unplayable or missing critical features. In this case, it is not possible to get a visual observation that would help formulating a proper feedback. 
+
+
+The *style* of ChatGPT is sometimes to decompose the problem and put placeholders in the code... but without the implementation!
+From a developer perspective, it is an interesting style that forces to consider a step-by-step implementation. 
+However, from a end-user perspective, the game is in an incomplete shape. 
+
+There are sometimes ChatGPT explanations related to a "feature" that does not exist, leading to time consuming effort. 
+For example, `Implement a feature that has no meaning "There was a 'FLAP' event that made the bird jump every 200ms. That's not part of the game!"`
+
+Some examples of issues that needed to be fixed:
+ * clock (pygame specifics?) => bird crashes immediately 
+ * gap placement between the pipes
+ * collision detection
+ * breaking of older functionality 
+ * missing a bit of diversity
+
+Both fixes are time-consuming. It is possible to help thanks to end-user, visual observations about the game. 
+Sometimes, there is the need to orient discussions and interactions towards code. 
+
+
+### How are games different? What are the features? 
+
+See all folders, videos and the preliminary [sheet](Flappy%20Bird/GPT-3.5/spreadsheet.xlsx) with features per game and method. 
+You can get well a feature-rich Flappy bird, but also a game with closed pipes that make the progression of the game limited.  
+
+### How do resulting codes differ?
+
+See [notebook](/Flappy%20Bird/Analysis.ipynb) 
+ 
+### What are the positive aspects of using ChatGPT? 
+
+There are several positive aspects:
+ * inspiration, funny variants 
+ * discovering new features
+ * good starting point for developers 
+ * sometimes it can work and end-users can create interesting games
+
+
+## Conclusion and perspectives 
+
+Formulating a prompt and systematically getting a comprehensive and playable game is not yet a reality. 
+ChatGPT can provide impressive results, but not all times. A magic prompt is missing to make ChatGPT reliable. 
+Many interactions are rather needed to fix issues or expand the features, sometimes in non-technical terms and with instructions out of observations of the current game. But the control of the code is not that far and seems inevitable. 
+
+There are several interesting directions to consider:
+ * change the targeted programming language and/or the framework: instead of Python and pygame, it's possible to use JavaScript and p5 for instance... An hypothesis is that the targeted technological space can help ChatGPT filling the gap between the prompts and the intentions. 
+ * find a super prompt or a language (who says a domain-specific language?) that leads to more determinism and control of ChatGPT
+ * improve the usability and the integration of ChatGPT ouputs into development environment. The back and forth between the IDE and ChatGPT is time-consuming. Moreover, some (informal) instructions of ChatGPT can be automatically applied onto the code base, limiting the user effort or the technical expertise required. The hope is to have a better feedback-loop! 
+
+
+
+## Methods
+
+In the `GPT-3.5` and `GPT-4` folders, we use different "methods", organized in subfolders (1st method, 2nd method, etc.). Here are the details:
+
  * __1st method__: _Giving ChatGPT an example of finished code doing what we want (in our case a complete Flappy Bird game written in Python), and asking it to return a prompt_.
 The prompt returned was never the same (probably because of the temperature parameter), but was usually in the form of a list of characteristics.
 For instance: 
@@ -79,87 +177,6 @@ For instance:
     >* Now can you add a score system? When the bird crosses the gap between a pair of pipes, the score should be incremented by one.*
     >* Now, can you add a start screen and a game over screen? The start screen should appear when the player opens the game, and it should be written on it 'Press space to start'. The game over screen should appear when the player loses, and it should be written on it the score and 'Press space to start'. Make sure that when restarting, the bird is at its initial position.*
     >* Finally, can you keep track of the highscore in a separate txt file? It should also be displayed on the game over screen.*
-
-## Observation and synthesis
- 
-### Do claims generalize? (Use the prompt and you'll get a game)  
-
-No, we did not find a method (or a magic prompt) that **systematically** works and would generate a feature-rich game.
-Though we have been able to generate interesting and playable games without technical intervention, there are also several cases and sessions that lead to a dead-end situation, far from the ideal scenario usually promised. 
-
-First, it happens that we reach a dead "end-state" with a non-working or unusable game (mainly due to inability to fix an issue), see for instance:
- * 2nd method, 2nd session (it is possible to continue, but just requiring skills to debug code "("Pipes only came 1 by 1 and not by pair. Trying to implement that only led to more problems that ChatGPT couldn't solve.")")
- * 2nd method, 4th session (10 interactions, Too many problems (no top pipes, always at the same height, wrong collision detection...))
-
-Second, despite the same original prompt (and the same "method"), we can have very different generated code. 
-This difference is in terms of: 
- * issues in the code, requiring more or less fixing and debugging effort
- * features supported: ChatGPT takes the liberty to implement (or not) some functionalities, and the resulting game might be very different... It forces again to interact with ChatGPT, specifically with regards to what has been generated.
-
-The consequence is that several specific interactions are needed, some leading to the worst situation (no working game), far from the ideal scenario. 
-
-
-
-### Is it possible to program without expertise? 
-
-Yes, but again, it is not systematic.
-
-Direct interventions in the code are sometimes needed (to fix issues!). 
-For example, we had to `[...] change the values of the gravity, bird_movemement and pipe_gap to make it easier and more controllable.`
-ChatGPT does not seem to find how to fix the code by itself (when we just point out the problems).
-Besides, it is more challenging to interact as end-user when the game was from the start in a very bad shape, and basically unplayable or missing critical features. In this case, it is not possible to get a visual observation that would help formulating a proper feedback. 
-
-
-The *style* of ChatGPT is sometimes to decompose the problem and put placeholders in the code... but without the implementation!
-From a developer perspective, it is an interesting style that forces to consider a step-by-step implementation. 
-However, from a end-user perspective, the game is in an incomplete shape. 
-
-There are sometimes ChatGPT explanations related to a "feature" that does not exist, leading to time consuming effort. 
-For example, `Implement a feature that has no meaning "There was a 'FLAP' event that made the bird jump every 200ms. That's not part of the game!"`
-
-Some examples of issues that needed to be fixed:
- * clock (pygame specifics?) => bird crashes immediately 
- * gap placement between the pipes
- * collision detection
- * breaking of older functionality 
- * missing a bit of diversity
-
-Both fixes are time-consuming. It is possible to help thanks to end-user, visual observations about the game. 
-Sometimes, there is the need to orient discussions and interactions towards code. 
-
-
-### How are games different? What are the features? 
-
-see videos and sheet with features per game and method. 
-You can get well a feature-rich Flappy bird, but also a game with closed pipes that make the progression of the game limited.  
-
-### How do resulting codes differ?
-
-see notebook
- 
- 
-### What are the positive aspects of using ChatGPT? 
-
-There are several positive aspects:
- * inspiration, funny variants 
- * discovering new features
- * good starting point for developers 
- * sometimes it can work and end-users can create interesting games
-
-
-## Conclusion and perspectives 
-
-Formulating a prompt and systematically getting a comprehensive and playable game is not yet a reality. 
-ChatGPT can provide impressive results, but not all times. A magic prompt is missing to make ChatGPT reliable. 
-Many interactions are rather needed to fix issues or expand the features, sometimes in non-technical terms and with instructions out of observations of the current game. But the control of the code is not that far and seems inevitable. 
-
-There are several interesting directions to consider:
- * change the targeted programming language and/or the framework: instead of Python and pygame, it's possible to use JavaScript and p5 for instance... An hypothesis is that the targeted technological space can help ChatGPT filling the gap between the prompts and the intentions. 
- * find a super prompt or a language (who says a domain-specific language?) that leads to more determinism and control of ChatGPT
- * improve the usability and the integration of ChatGPT ouputs into development environment. The back and forth between the IDE and ChatGPT is time-consuming. Moreover, some (informal) instructions of ChatGPT can be automatically applied onto the code base, limiting the user effort or the technical expertise required. The hope is to have a better feedback-loop! 
-
-
-
 
 
 ## Future 
